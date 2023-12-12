@@ -1,5 +1,5 @@
 /*
-A DFS based program in which outputs all systems reachable from a given system and also its time and space complexity, for a network having ‘n’ systems.
+A DFS based program in which outputs all systems reachable from a given system and also its time and space complexity for a network having ‘n’ systems.
 */
 
 
