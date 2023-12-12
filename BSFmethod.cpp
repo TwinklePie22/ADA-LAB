@@ -1,5 +1,5 @@
 /*
-Program that shows its time and space complexity, for a given digraph outputs all the vertices reachable from a given starting vertex using BFS method
+Program that shows its time and space complexity, for a given digraph outputs all the vertices reachable from a given starting vertex using BSF method
 */
 
 #include <iostream>
