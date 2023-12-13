@@ -1,5 +1,6 @@
-
-
+/*
+ * This program implements the Heap Sort algorithm to sort a given array of integers.
+*/
 #include <iostream>
 #include <vector>
 
