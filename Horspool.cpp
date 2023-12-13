@@ -7,10 +7,10 @@
 #include <iostream>
 #include <unordered_map>
 #include <string>
-
-std::unordered_map<char, int> preprocess_pattern(const std::string& pattern) {
+using namespace std;
+unordered_map<char, int> preprocess_pattern(const string& pattern) {
     int m = pattern.length();
-    std::unordered_map<char, int> bad_char_shift;
+    unordered_map<char, int> bad_char_shift;
 
     for (int i = 0; i < m - 1; ++i) {
         bad_char_shift[pattern[i]] = m - 1 - i;
@@ -19,10 +19,10 @@ std::unordered_map<char, int> preprocess_pattern(const std::string& pattern) {
     return bad_char_shift;
 }
 
-int search_pattern_dna(const std::string& text, const std::string& pattern) {
+int search_pattern_dna(const string& text, const string& pattern) {
     int n = text.length();
     int m = pattern.length();
-    std::unordered_map<char, int> bad_char_shift = preprocess_pattern(pattern);
+    unordered_map<char, int> bad_char_shift = preprocess_pattern(pattern);
     int i = m - 1;
 
     while (i < n) {
@@ -48,14 +48,14 @@ int search_pattern_dna(const std::string& text, const std::string& pattern) {
 }
 
 int main() {
-    std::string dna_sequence = "ATCGATCGTACGATCG";
-    std::string pattern_to_find = "TACG";
+    string dna_sequence = "ATCGATCGTACGATCG";
+    string pattern_to_find = "TACG";
 
     int result = search_pattern_dna(dna_sequence, pattern_to_find);
     if (result != -1) {
-        std::cout << "Pattern found at position " << result << std::endl;
+        cout << "Pattern found at position " << result << endl;
     } else {
-        std::cout << "Pattern not found in the DNA sequence" << std::endl;
+        cout << "Pattern not found in the DNA sequence" << endl;
     }
 
     return 0;
