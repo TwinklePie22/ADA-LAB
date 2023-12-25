@@ -20,12 +20,13 @@ void bubbleSort(int arr[], int n)
 }
 int main()
 {	
-	int n, arr[n];
+	int n;
 	cout<<"Enter the number of elements of array: ";
 	cin >> n;
-	cout<<"Enter the elements of array: ";
+	int arr[n];
 	for(int i=0; i<n; i++)
-	{
+	{	
+		cout<<"Enter the element "<<i+1<<" of array: ";
 		cin>>arr[i];
 	}
 	// int arr[]={24,12,58,668,88,20,4};

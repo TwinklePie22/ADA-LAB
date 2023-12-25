@@ -1,4 +1,4 @@
-//selection sort an array in assending order
+//selection sort an array in ascending order
 
 #include<iostream>
 using namespace std;
@@ -10,7 +10,7 @@ void selectionSort(int arr[], int n)
 		int minValue=i;
 		for(int j=i+1;j<n;j++)
 		{
-			if(arr[j]< arr[minValue])
+			if(arr[minValue] > arr[j])
 				minValue=j;
 		}
 		int temp= arr[i];
@@ -20,7 +20,7 @@ void selectionSort(int arr[], int n)
 }
 int main()
 {
-	int arr[]={25,669,7755,42,55,254,10,3,64};
+	int arr[]={25,669,775,42,55,254,10,3,64};
 	int n= sizeof(arr)/sizeof(arr[0]);
 	cout<<"Original Array: ";
 	for(int i=0; i<n; i++)
@@ -29,11 +29,11 @@ int main()
 	}
 	cout<<endl;
 	selectionSort(arr,n);
-	std::cout<<"Sorted Array: ";
+	cout<<"Sorted Array: ";
 	for(int i=0; i<n; i++)
 	{
 		cout<<arr[i]<<" ";
 	}
-	cout<<endl;
+	cout<<"\n"<<endl;
 	return 0;
 }

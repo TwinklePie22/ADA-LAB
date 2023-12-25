@@ -1,51 +1,118 @@
-// quick sort algorithm on a given array
-
-#include<iostream>
+/**
+ * TODO-  Merge Sort algorithm for an array
+ */
+#include <iostream>
+#include <vector>
+#include <algorithm>
 using namespace std;
 
-int divideArray (int arr[], int lb, int ub)   // lb= lower bound and ub= upper bound
+void merge(vector<int> &files_Id, int left, int mid, int right)
 {
-	int pivot= arr[lb];
-	int i = lb;
-	for(int j=lb+1; j<=ub; j++)
-	{
-		if(arr[j] < pivot)
-		{
-			i++;
-			swap(arr[i],arr[j]);
-		}
-	}
-	swap(arr[lb],arr[i]);	
-	return i;
+	inplace_merge(files_Id.begin() + left, files_Id.begin() + mid + 1, files_Id.begin() + right + 1);
 }
-void quickSort (int arr[], int lb, int ub)
+
+void mergeSort(vector<int> &files_Id, int left, int right)
 {
-	if(lb < ub)
+	if (left < right)
 	{
-		int p= divideArray(arr, lb, ub );
-		quickSort(arr, lb, p-1);
-		quickSort(arr, p+1, ub);
+		int mid = left + (right - left) / 2;
+
+		mergeSort(files_Id, left, mid);
+		mergeSort(files_Id, mid + 1, right);
+		merge(files_Id, left, mid, right);
 	}
-}
-void printArray(int arr[], int size)
-{
-	for(int a=0; a<size; a++)
-	{
-		cout<<arr[a]<<" " ;
-	}
-	cout<<endl;
 }
 
 int main()
 {
-	int arr[]= {5, 3, 1, 9, 8, 2, 4, 7};
-	int n= sizeof(arr)/sizeof(arr[0]);
-	cout<< "Original Array: ";
-	printArray(arr,n);
+	vector<int> files_Id = {3, 1, 4, 2};
 	
-	// sorting the given array
-	quickSort(arr, 0, n-1);
-	cout<<"Sorted Array: ";
-	printArray(arr, n);
+	cout << "Original files ID's:";
+	for (size_t i = 0; i < files_Id.size(); ++i)
+		cout <<  files_Id[i]<<" " ;
+	cout<<endl;
+	mergeSort(files_Id, 0, files_Id.size() - 1);
+
+	cout << "\nSorted files ID's:";
+	for (size_t i = 0; i < files_Id.size(); ++i)
+		cout << files_Id[i]<<" " ;
+	cout<<endl;
 	return 0;
 }
+
+// #include <iostream>
+// #include <vector>
+// using namespace std;
+
+// void merge(vector<int> &files, int left, int mid, int right)
+// {
+// 	int i, j, k;
+// 	int n1 = mid - left + 1;
+// 	int n2 = right - mid;
+
+// 	vector<int> L(n1), R(n2);
+
+// 	for (i = 0; i < n1; i++)
+// 		L[i] = files[left + i];
+// 	for (j = 0; j < n2; j++)
+// 		R[j] = files[mid + 1 + j];
+
+// 	i = 0;
+// 	j = 0;
+// 	k = left;
+// 	while (i < n1 && j < n2)
+// 	{
+// 		if (L[i] <= R[j])
+// 		{
+// 			files[k] = L[i];
+// 			i++;
+// 		}
+// 		else
+// 		{
+// 			files[k] = R[j];
+// 			j++;
+// 		}
+// 		k++;
+// 	}
+
+// 	while (i < n1)
+// 	{
+// 		files[k] = L[i];
+// 		i++;
+// 		k++;
+// 	}
+
+// 	while (j < n2)
+// 	{
+// 		files[k] = R[j];
+// 		j++;
+// 		k++;
+// 	}
+// }
+// void mergeSort(vector<int> &files, int left, int right)
+// {
+// 	if (left < right)
+// 	{
+// 		int mid = left + (right - left) / 2;
+
+// 		mergeSort(files, left, mid);
+// 		mergeSort(files, mid + 1, right);
+
+// 		merge(files, left, mid, right);
+// 	}
+// }
+
+// int main()
+// {
+// 	vector<int> files = {3, 2, 5, 1, 6, 4};
+// 	int files_count = files.size();
+// 	cout << "Given files: \n";
+// 	for (int i = 0; i < files_count; i++)
+// 		cout << files[i] << " ";
+// 	mergeSort(files, 0, files_count - 1);
+// 	cout << "\nSorted files are: \n";
+// 	for (int i = 0; i < files_count; i++)
+// 		cout << files[i] << " ";
+
+// 	return 0;
+// }

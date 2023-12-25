@@ -43,7 +43,7 @@ int main()
 	cout<< "Original Array: ";
 	printArray(arr,n);
 	
-	// sorting the given array
+	// Sorted array
 	quickSort(arr, 0, n-1);
 	cout<<"Sorted Array: ";
 	printArray(arr, n);
