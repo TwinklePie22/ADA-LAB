@@ -19,9 +19,17 @@ void bubbleSort(int arr[], int n)
 	}
 }
 int main()
-{
-	int arr[]={24,12,58,668,88,20,4};
-	int n= sizeof(arr)/sizeof(arr[0]);
+{	
+	int n, arr[n];
+	cout<<"Enter the number of elements of array: ";
+	cin >> n;
+	cout<<"Enter the elements of array: ";
+	for(int i=0; i<n; i++)
+	{
+		cin>>arr[i];
+	}
+	// int arr[]={24,12,58,668,88,20,4};
+	// int n= sizeof(arr)/sizeof(arr[0]);
 	cout<<"Original Array: ";
 	for(int i=0; i<n; i++)
 	{
