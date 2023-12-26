@@ -12,8 +12,9 @@ void insertionSort(int arr[], int n)
 
 		while (j >= 0 && arr[j] > temp) 
 		{
-			arr[j + 1] = arr[j];
-			j -=1;  // j=j-1;
+			// arr[j + 1] = arr[j];
+			swap(arr[j + 1] ,arr[j]);
+			j --;             
 		}
 		arr[j + 1] = temp;
 	}

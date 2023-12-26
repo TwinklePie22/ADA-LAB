@@ -7,7 +7,7 @@ int divideArray (int arr[], int lb, int ub)   // lb= lower bound and ub= upper b
 {
 	int pivot= arr[lb];
 	int i = lb;
-	for(int j=lb+1; j<=ub; j++)
+	for(int j=i+1; j<=ub; j++)
 	{
 		if(arr[j] < pivot)
 		{
