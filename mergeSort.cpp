@@ -40,79 +40,42 @@ int main()
 	return 0;
 }
 
-// #include <iostream>
-// #include <vector>
+// #include<iostream>
+// #include<algorithm>  
+// /* 
+// this header contains various algorithms and functions for working with data structure and containers 
+// */
 // using namespace std;
 
-// void merge(vector<int> &files, int left, int mid, int right)
+// void MergeSort(int arr[], int left , int right)
 // {
-// 	int i, j, k;
-// 	int n1 = mid - left + 1;
-// 	int n2 = right - mid;
-
-// 	vector<int> L(n1), R(n2);
-
-// 	for (i = 0; i < n1; i++)
-// 		L[i] = files[left + i];
-// 	for (j = 0; j < n2; j++)
-// 		R[j] = files[mid + 1 + j];
-
-// 	i = 0;
-// 	j = 0;
-// 	k = left;
-// 	while (i < n1 && j < n2)
+// 	if(left<right)
 // 	{
-// 		if (L[i] <= R[j])
-// 		{
-// 			files[k] = L[i];
-// 			i++;
-// 		}
-// 		else
-// 		{
-// 			files[k] = R[j];
-// 			j++;
-// 		}
-// 		k++;
-// 	}
-
-// 	while (i < n1)
-// 	{
-// 		files[k] = L[i];
-// 		i++;
-// 		k++;
-// 	}
-
-// 	while (j < n2)
-// 	{
-// 		files[k] = R[j];
-// 		j++;
-// 		k++;
+// 		int mid = left +(right-left)/2;
+// 		MergeSort(arr, left, mid);
+// 		MergeSort(arr, mid+1, right);
+// 		inplace_merge(arr+left, arr+mid+1, arr+right+1); // to merge two sorted sub-arrays
 // 	}
 // }
-// void mergeSort(vector<int> &files, int left, int right)
+// void printArray(int arr[], int size)
 // {
-// 	if (left < right)
+// 	for(int a=0; a<size; a++)
 // 	{
-// 		int mid = left + (right - left) / 2;
-
-// 		mergeSort(files, left, mid);
-// 		mergeSort(files, mid + 1, right);
-
-// 		merge(files, left, mid, right);
+// 		cout<<arr[a]<<" " ;
 // 	}
+// 	cout<<endl;
 // }
 
 // int main()
 // {
-// 	vector<int> files = {3, 2, 5, 1, 6, 4};
-// 	int files_count = files.size();
-// 	cout << "Given files: \n";
-// 	for (int i = 0; i < files_count; i++)
-// 		cout << files[i] << " ";
-// 	mergeSort(files, 0, files_count - 1);
-// 	cout << "\nSorted files are: \n";
-// 	for (int i = 0; i < files_count; i++)
-// 		cout << files[i] << " ";
-
+// 	int arr[]= {15, 5, 24, 8, 1, 3, 16, 10, 20};
+// 	int n= sizeof(arr)/sizeof(arr[0]);
+// 	cout<< "Original Array: ";
+// 	printArray(arr,n);
+	
+// 	// sorting the given array
+// 	MergeSort(arr, 0, n-1);
+// 	cout<<"Sorted Array: ";
+// 	printArray(arr, n);
 // 	return 0;
 // }
