@@ -42,9 +42,6 @@ int main()
 
 // #include<iostream>
 // #include<algorithm>  
-// /* 
-// this header contains various algorithms and functions for working with data structure and containers 
-// */
 // using namespace std;
 
 // void MergeSort(int arr[], int left , int right)
@@ -72,8 +69,7 @@ int main()
 // 	int n= sizeof(arr)/sizeof(arr[0]);
 // 	cout<< "Original Array: ";
 // 	printArray(arr,n);
-	
-// 	// sorting the given array
+
 // 	MergeSort(arr, 0, n-1);
 // 	cout<<"Sorted Array: ";
 // 	printArray(arr, n);
