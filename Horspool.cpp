@@ -8,6 +8,7 @@
 #include <unordered_map>
 #include <string>
 using namespace std;
+
 unordered_map<char, int> preprocess_pattern(const string& pattern) {
     int m = pattern.length();
     unordered_map<char, int> bad_char_shift;
