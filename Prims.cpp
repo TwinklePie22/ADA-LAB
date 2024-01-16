@@ -1,5 +1,5 @@
 #include<iostream>
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
 #define V 5
@@ -34,14 +34,12 @@ void primMST(int graph[V][V])
 
 	for (int i = 0; i < V; i++)
 		key[i] = INT_MAX, mstSet[i] = false;
-
 	key[0] = 0;
 	parent[0] = -1;
 
 	for (int count = 0; count < V - 1; count++) {
 		
 		int u = minKey(key, mstSet);
-
 	
 		mstSet[u] = true;
 
