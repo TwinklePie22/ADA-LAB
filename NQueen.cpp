@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-
 class Solution {
 public:
     vector<vector<string>> solveNQueens(int n) {
@@ -13,7 +12,6 @@ public:
       dfs(n, 0, cols, diag1, diag2, board, ans);
       return ans;
     }
-
 private:
     void dfs(int n, int i, vector<bool>& cols, vector<bool>& diag1,
              vector<bool>& diag2, vector<string>& board,
@@ -22,7 +20,6 @@ private:
             ans.push_back(board);
             return;
         }
-
         for (int j = 0; j < n; ++j) {
             if (cols[j] || diag1[i + j] || diag2[j - i + n - 1])
                 continue;
@@ -34,10 +31,9 @@ private:
         }
     }
 };
-
 int main() {
     Solution solution;
-    int n = 4; // Set your desired board size
+    int n = 4; 
     vector<vector<string>> result = solution.solveNQueens(n);
 
     for (const auto& solution : result) {
@@ -45,6 +41,5 @@ int main() {
             cout << row << endl;
         }
     }
-
     return 0;
 }
