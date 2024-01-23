@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void transitiveClosure(vector<vector<int>>& graph) {
+void Warshall(vector<vector<int>>& graph) {
     int n = graph.size();
 
     vector<vector<int>> closure(n, vector<int>(n, 0));
@@ -32,6 +32,6 @@ int main() {
         {0, 0, 1, 1},
         {0, 0, 0, 1}
     };
-    transitiveClosure(graph);
+    Warshall(graph);
     return 0;
 }
