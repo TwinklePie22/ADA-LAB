@@ -5,6 +5,7 @@
 #include <chrono> 
 
 using namespace std;
+using namespace std::chrono;
 
 const int INF = numeric_limits<int>::max();
 void dijkstra(vector<vector<int>>& graph, int source, vector<int>& distance) {
@@ -38,15 +39,15 @@ int main() {
     int source = 1;
     vector<int> distance;
 
-    auto start = chrono::high_resolution_clock::now();
+    auto start = high_resolution_clock::now();
     dijkstra(graph, source, distance);
-    auto end = chrono::high_resolution_clock::now();
+    auto end = high_resolution_clock::now();
 
     cout << "Shortest distances from city " << source << ":\n";
     for (int i = 0; i < n; ++i)
         cout << "City " << i << ": " << (distance[i] == INF ? "Not reachable" : to_string(distance[i]) + " units") << "\n";
 
-    chrono::duration<double> duration = end - start;
+    duration<double> duration = end - start;
     cout << "Time Complexity: " << duration.count() << " seconds"<<endl;
     return 0;
 }
