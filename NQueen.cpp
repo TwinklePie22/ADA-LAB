@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-
 using namespace std;
 
 class Solution {
@@ -41,12 +40,10 @@ int main() {
     int n = 4; // Set your desired board size
     vector<vector<string>> result = solution.solveNQueens(n);
 
-    // Display the solutions (you can customize this part)
     for (const auto& solution : result) {
         for (const auto& row : solution) {
             cout << row << endl;
         }
-        cout << "-----------------------" << endl;
     }
 
     return 0;
