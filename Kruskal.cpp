@@ -19,7 +19,6 @@ public:
         }
     }
 };
-
 class Graph {
     vector<vector<int>> e;
     int V;
