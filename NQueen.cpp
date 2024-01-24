@@ -36,8 +36,9 @@ int main() {
 
     for (const auto& solution : result) {
         for (const auto& row : solution) {
-            cout << row << endl;
+            cout << row  << endl;
         }
+        cout<<"\n";
     }
     return 0;
 }
