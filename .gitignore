@@ -1,1 +1,15 @@
-bubbleSort.exe
+/*
+ Method for finding the time complexity 
+*/
+#include <ctime>
+
+// Start timer
+clock_t start = clock();
+
+// Your code here...
+
+// End timer
+clock_t end = clock();
+
+// Calculate elapsed time in seconds
+double elapsed_secs = double(end - start) / CLOCKS_PER_SEC;
