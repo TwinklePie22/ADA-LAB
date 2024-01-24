@@ -17,7 +17,7 @@ void Warshall(vector<vector<int>>& graph) {
             for (int j = 0; j < n; ++j)
                 dist[i][j] = dist[i][j] || (dist[i][k] && dist[k][j]);
 
-    cout << "Transitive closure Matrix:\n";
+    cout << "Transitive Closure Matrix:\n";
     for (int i = 0; i < n; ++i) {
         for (int j = 0; j < n; ++j) {
             cout << dist[i][j] << "\t";
