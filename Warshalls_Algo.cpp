@@ -6,21 +6,21 @@ using namespace std;
 void Warshall(vector<vector<int>>& graph) {
     int n = graph.size();
 
-    vector<vector<int>> clousre(n, vector<int>(n, 0));
+    vector<vector<int>> dist(n, vector<int>(n, 0));
 
     for (int i = 0; i < n; ++i)
         for (int j = 0; j < n; ++j)
-            clousre[i][j] = graph[i][j];
+            dist[i][j] = graph[i][j];
 
     for (int k = 0; k < n; ++k)
         for (int i = 0; i < n; ++i)
             for (int j = 0; j < n; ++j)
-                clousre[i][j] = clousre[i][j] || (clousre[i][k] && clousre[k][j]);
+                dist[i][j] = dist[i][j] || (dist[i][k] && dist[k][j]);
 
-    cout << "Transitive clousre Matrix:\n";
+    cout << "Transitive closure Matrix:\n";
     for (int i = 0; i < n; ++i) {
         for (int j = 0; j < n; ++j) {
-            cout << clousre[i][j] << "\t";
+            cout << dist[i][j] << "\t";
         }
         cout << endl;
     }
