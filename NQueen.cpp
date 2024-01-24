@@ -13,9 +13,7 @@ public:
       return ans;
     }
 private:
-    void dfs(int n, int i, vector<bool>& cols, vector<bool>& diag1,
-             vector<bool>& diag2, vector<string>& board,
-             vector<vector<string>>& ans) {
+    void dfs(int n, int i, vector<bool>& cols, vector<bool>& diag1, vector<bool>& diag2, vector<string>& board, vector<vector<string>>& ans) {
         if (i == n) {
             ans.push_back(board);
             return;
