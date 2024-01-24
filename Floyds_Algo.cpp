@@ -1,23 +1,24 @@
 #include <iostream>
 #include <vector>
+
 using namespace std;
 
 void floyd(vector<vector<int>>& graph) {
-    int V = graph.size();
+    int n = graph.size();
 
-    vector<vector<int>> dist(V, vector<int>(V, INT_MAX));
-    for (int i = 0; i < V; ++i)
-        for (int j = 0; j < V; ++j)
+    vector<vector<int>> dist(n, vector<int>(n, INT_MAX));
+    for (int i = 0; i < n; ++i)
+        for (int j = 0; j < n; ++j)
             dist[i][j] = graph[i][j];
 
-    for (int k = 0; k < V; ++k)
-        for (int i = 0; i < V; ++i)
-            for (int j = 0; j < V; ++j)
+    for (int k = 0; k < n; ++k)
+        for (int i = 0; i < n; ++i)
+            for (int j = 0; j < n; ++j)
                 if (dist[i][k] != INT_MAX && dist[k][j] != INT_MAX && dist[i][k] + dist[k][j] < dist[i][j])
                     dist[i][j] = dist[i][k] + dist[k][j];
 
-    for (int i = 0; i < V; ++i) {
-        for (int j = 0; j < V; ++j) {
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < n; ++j) {
             if (dist[i][j] == INT_MAX)
                 cout << "INF\t";
             else
