@@ -5,7 +5,8 @@ using namespace std;
 
 const int MAX_DISTANCE = 999;
 
-void dijkstra(int graph[20][20], int source, int distance[], int n) {
+void dijkstra(int graph[20][20], int source, int distance[], int n) 
+{
     fill(distance, distance + n, MAX_DISTANCE);
     distance[source] = 0;
 
