@@ -20,12 +20,10 @@ void DFS(vector<vector<int>> &graph, int startNode)
     {
         int currentNode = stk.top();
         stk.pop();
-
         if (!visited[currentNode])
         {
             cout << currentNode << " ";
             visited[currentNode] = true;
-
             for (int i = numNodes - 1; i >= 0; --i)
             {
                 if (graph[currentNode][i] && !visited[i])
@@ -36,7 +34,6 @@ void DFS(vector<vector<int>> &graph, int startNode)
         }
     }
 }
-
 int main()
 {
     int numNodes = 5;
@@ -55,7 +52,6 @@ int main()
 
     cout << "DFS Traversal starting from node " << startNode << ": ";
     DFS(graph, startNode);
-
     return 0;
 }
 /*
