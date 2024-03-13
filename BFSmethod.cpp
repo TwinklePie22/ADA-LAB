@@ -6,49 +6,50 @@ Program that shows its time and space complexity, for a given digraph outputs al
 #include <vector>
 using namespace std;
 
-void bfs(vector<vector<int>>& adjList, int startNode, vector<bool>& visited)
+void bfs(vector<vector<int>> &adjList, int startNode, vector<bool> &visited)
 {
-	queue<int> q;
-	visited[startNode] = true;
-	q.push(startNode);
-	while (!q.empty()) 
+    queue<int> q;
+    visited[startNode] = true;
+    q.push(startNode);
+    while (!q.empty())
     {
-		int currentNode = q.front();
-		q.pop();
-		cout << currentNode << " ";
-		for (int neighbor : adjList[currentNode]) 
+        int currentNode = q.front();
+        q.pop();
+        cout << currentNode << " ";
+        for (int neighbor : adjList[currentNode])
         {
-			if (!visited[neighbor]) 
+            if (!visited[neighbor])
             {
-				visited[neighbor] = true;
-				q.push(neighbor);
-			}
-		}
-	}
+                visited[neighbor] = true;
+                q.push(neighbor);
+            }
+        }
+    }
 }
-void addEdge(vector<vector<int> >& adjList, int u, int v)
+void addEdge(vector<vector<int>> &adjList, int u, int v)
 {
-	adjList[u].push_back(v);
+    adjList[u].push_back(v);
 }
 int main()
 {
-	int vertices = 5;
-	vector<vector<int> > adjList(vertices);
+    int vertices = 5;
+    vector<vector<int>> adjList(vertices);
 
-	addEdge(adjList, 0, 1);
-	addEdge(adjList, 0, 2);
-	addEdge(adjList, 1, 3);
-	addEdge(adjList, 1, 4);
-	addEdge(adjList, 2, 4);
-	vector<bool> visited(vertices, false);
-	cout << "Breadth First Traversal starting from vertex 0: ";
-    clock_t start = clock ();
-	bfs(adjList, 0, visited);
+    addEdge(adjList, 0, 1);
+    addEdge(adjList, 0, 2);
+    addEdge(adjList, 1, 3);
+    addEdge(adjList, 1, 4);
+    addEdge(adjList, 2, 4);
+    vector<bool> visited(vertices, false);
+    cout << "Breadth First Traversal starting from vertex 0: ";
+    clock_t start = clock();
+    bfs(adjList, 0, visited);
     clock_t end = clock();
-    double time_spent = double(end-start);
-    cout<<"\ntime spent: "<<time_spent<<"ms";
-	return 0;
+    double time_spent = double(end - start);
+    cout << "\ntime spent: " << time_spent << "ms";
+    return 0;
 }
+
 
 /*
 #include <iostream>
