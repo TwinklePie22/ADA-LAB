@@ -9,7 +9,6 @@ void addEdge(vector<vector<int>> &graph, int u, int v)
     graph[u][v] = 1;
     graph[v][u] = 1;
 }
-
 void BFS(vector<vector<int>> &graph, int startNode)
 {
     int numNodes = graph.size();
