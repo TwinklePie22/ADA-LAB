@@ -1,9 +1,3 @@
-/*
-? This program implements the Horspool's algorithm for string matching.
-* It is used to find the occurrence of a pattern in a DNA sequence.
-* The DNA sequence and the pattern are represented as strings of characters.
-*/
-
 #include <iostream>
 #include <unordered_map>
 #include <string>
