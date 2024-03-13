@@ -6,50 +6,58 @@ Program that shows its time and space complexity, for a given digraph outputs al
 #include <vector>
 using namespace std;
 
-void bfs(vector<vector<int>> &adjList, int startNode, vector<bool> &visited)
+void BFS(vector<vector<int>> &graph, int startNode)
 {
+    int numNodes = graph.size();
+    vector<bool> visited(numNodes, false);
     queue<int> q;
+
     visited[startNode] = true;
     q.push(startNode);
+
     while (!q.empty())
     {
         int currentNode = q.front();
-        q.pop();
         cout << currentNode << " ";
-        for (int neighbor : adjList[currentNode])
+        q.pop();
+
+        for (int i = 0; i < numNodes; ++i)
         {
-            if (!visited[neighbor])
+            if (graph[currentNode][i] && !visited[i])
             {
-                visited[neighbor] = true;
-                q.push(neighbor);
+                visited[i] = true;
+                q.push(i);
             }
         }
     }
 }
-void addEdge(vector<vector<int>> &adjList, int u, int v)
-{
-    adjList[u].push_back(v);
-}
 int main()
 {
-    int vertices = 5;
-    vector<vector<int>> adjList(vertices);
+    int numNodes;
+    cout << "Enter the number of nodes in the graph: ";
+    cin >> numNodes;
 
-    addEdge(adjList, 0, 1);
-    addEdge(adjList, 0, 2);
-    addEdge(adjList, 1, 3);
-    addEdge(adjList, 1, 4);
-    addEdge(adjList, 2, 4);
-    vector<bool> visited(vertices, false);
-    cout << "Breadth First Traversal starting from vertex 0: ";
+    vector<vector<int>> graph(numNodes, vector<int>(numNodes, 0));
+
+    cout << "Enter the adjacency matrix for the graph:" << endl;
+    for (int i = 0; i < numNodes; ++i)
+    {
+        for (int j = 0; j < numNodes; ++j)
+        {
+            cin >> graph[i][j];
+        }
+    }
+    int startNode;
+    cout << "Enter the starting node for BFS traversal: ";
+    cin >> startNode;
+    cout << "BFS Traversal starting from node " << startNode << ": ";
     clock_t start = clock();
-    bfs(adjList, 0, visited);
+    BFS(graph, startNode);
     clock_t end = clock();
     double time_spent = double(end - start);
-    cout << "\ntime spent: " << time_spent << "ms";
+    cout << "\ntime spent: " << time_spent << " ms";
     return 0;
 }
-
 
 /*
 #include <iostream>
