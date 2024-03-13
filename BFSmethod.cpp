@@ -57,6 +57,18 @@ int main()
     cout << "\ntime spent: " << time_spent << " ms";
     return 0;
 }
+/*
+Output-
+Enter the number of nodes in the graph: 5
+Enter the adjacency matrix for the graph:
+0 1 0 1 0
+1 0 1 1 1
+0 1 0 0 1
+1 1 0 0 1
+0 1 1 1 0
+Enter the starting node for BFS traversal: 0
+BFS Traversal starting from node 0: 0 1 3 2 4
+*/
 
 /*
 #include <iostream>
