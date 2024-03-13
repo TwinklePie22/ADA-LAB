@@ -33,7 +33,7 @@ void BFS(vector<vector<int>> &graph, int startNode)
 }
 int main()
 {
-    int numNodes;
+    int numNodes, startNode;
     cout << "Enter the number of nodes in the graph: ";
     cin >> numNodes;
 
@@ -47,7 +47,6 @@ int main()
             cin >> graph[i][j];
         }
     }
-    int startNode;
     cout << "Enter the starting node for BFS traversal: ";
     cin >> startNode;
     cout << "BFS Traversal starting from node " << startNode << ": ";
